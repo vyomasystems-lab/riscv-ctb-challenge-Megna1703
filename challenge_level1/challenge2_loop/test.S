@@ -14,7 +14,9 @@ RVTEST_CODE_BEGIN
   li t5, 3
 
 loop:
-	lw t1, (t0)
+  beqz t5, pass
+  addi t5, t5, -1         #to decrement the value in register t5 by 1
+  lw t1, (t0)
   lw t2, 4(t0)
   lw t3, 8(t0)
   add t4, t1, t2
