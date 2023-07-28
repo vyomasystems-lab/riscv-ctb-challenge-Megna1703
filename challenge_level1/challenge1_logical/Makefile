@@ -7,8 +7,8 @@ disass: compile
 	riscv32-unknown-elf-objdump -D test.elf > test.disass
 
 spike: compile
-	spike --isa=rv32i test.elf 
-	spike --log-commits --log  test_spike.dump --isa=rv32i +signature=test_spike_signature.log test.elf
+	/tools/spike_hyp_latest/bin/spike --isa=rv32i test.elf 
+	/tools/spike_hyp_latest/bin/spike --log-commits --log  test_spike.dump --isa=rv32i +signature=test_spike_signature.log test.elf
 
 clean:
 	rm -rf *.elf *.disass *.log *.dump
