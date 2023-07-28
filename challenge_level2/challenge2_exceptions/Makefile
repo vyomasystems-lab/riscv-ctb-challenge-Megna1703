@@ -8,7 +8,7 @@ gen: clean
 
 compile:
 	@echo '[UpTickPro] Test Compilation ------'
-	riscv32-unknown-elf-gcc -march=rv32g -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I$(PWD)/work/common -T$(PWD)/test.ld test.S $(PWD)/work/common/crt.S -o test.elf
+	riscv32-unknown-elf-gcc -march=rv32i -mabi=ilp32 -static -mcmodel=medany -fvisibility=hidden -nostdlib -nostartfiles -I$(PWD)/work/common -T$(PWD)/test.ld test.S $(PWD)/work/common/crt.S -o test.elf
 
 disass: compile
 	@echo '[UpTickPro] Test Disassembly ------'
@@ -22,7 +22,7 @@ spike: compile
 check: test_spike.dump
 	@echo '[UpTickPro] Number of Exceptions'
 	spike -l --isa=rv32i test.elf 2> spike.log
-	grep trap_illegal_instruction spike.log > exceptions.log
+	grep exception spike.log > exceptions.log
 	cat exceptions.log
 	wc -l exceptions.log
 
