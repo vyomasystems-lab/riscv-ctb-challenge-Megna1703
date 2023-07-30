@@ -1,6 +1,10 @@
 # challenge_level1
 ## challenge3_illegal
 ### Errors : To fix an illegal instruction using a handler code
+
+![Screenshot (1210)](https://github.com/vyomasystems-lab/riscv-ctb-challenge-Megna1703/assets/110230441/02904231-b3d7-4c9e-844d-7925d9851c8c)
+
+
 ## Fixes :
 ### Fix 1:
 The code handles the machine trap vector for illegal instruction exceptions. When an illegal instruction is encountered, the code checks the cause of the exception and updates the program counter *mepc* within the handler to skip the illegal instruction, allowing the program to continue executing from the next instruction.
@@ -24,6 +28,10 @@ mtvec_handler:
   mret
   ....
 ```
+
+![Screenshot (1211)](https://github.com/vyomasystems-lab/riscv-ctb-challenge-Megna1703/assets/110230441/23a757e1-4f34-49ca-a5e3-2d9f10f8e671)
+
+
 The label *TEST_PASSFAIL* is defined inside the file **test_macros.h** which hass the *pass* and *fail* statements. It checks if x0 and *TEST_NUM* values are equal, if not, executes *pass*.
 
 ### Fix 2:
@@ -46,3 +54,5 @@ mtvec_handler:
   mret
   ....
 ```
+
+![Screenshot (1212)](https://github.com/vyomasystems-lab/riscv-ctb-challenge-Megna1703/assets/110230441/1b6bd469-e021-4b48-ab92-3b1c7998ad51)
