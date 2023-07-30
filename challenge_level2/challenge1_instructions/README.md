@@ -1,6 +1,9 @@
 # challenge_level2
 ## challenge1_instructions
 ### Errors: Unrecognised opcode due to instruction distribution type
+
+![Screenshot (1216)](https://github.com/vyomasystems-lab/riscv-ctb-challenge-Megna1703/assets/110230441/4afa174a-add5-4885-b103-7fb645ed689a)
+
 ## Fixes :
 ### Fix 1:
 The *compile* rule in the Makefile has *-march* defined as **rv32i** ( -march allows you to specify the ISA and extensions that the compiled code should be compatible with). 
@@ -24,6 +27,8 @@ isa-instruction-distribution:
   ....
   ....
 ```
+![Screenshot (1217)](https://github.com/vyomasystems-lab/riscv-ctb-challenge-Megna1703/assets/110230441/97cc44e6-c488-4b40-85e1-760ca3e4cbc3)
+
 ### Fix 2:
 Incase if want a ISA compatible with **i,m** then modify the makefile by replacing **rv32i** with **rv32im** as follows:
 ```
@@ -65,3 +70,4 @@ isa-instruction-distribution:
   ....
   ....
 ```
+![Screenshot (1219)](https://github.com/vyomasystems-lab/riscv-ctb-challenge-Megna1703/assets/110230441/3e5876eb-01c7-4d71-8f7f-a4019fe511a4)
